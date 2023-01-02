@@ -6,23 +6,23 @@ title: Home
 heroImage: /favicon.ico
 heroText: Kory's blog
 bgImage: /bg.png
-tagline: Life is real, life is earnest.
+tagline: Stay hungry, Stay foolish.
 heroFullScreen: false
 projects:
-  - icon: project
-    name: project name
-    desc: project detailed description
-    link: https://your.project.link
+  # - icon: project
+  #   name: project name
+  #   desc: project detailed description
+  #   link: https://your.project.link
 
-  # - icon: link
-  #   name: link name
-  #   desc: link detailed description
-  #   link: https://link.address
+  - icon: link
+    name: link name
+    desc: link detailed description
+    link: https://link.address
 
-  # - icon: book
-  #   name: book name
-  #   desc: Detailed description of the book
-  #   link: https://link.to.your.book
+  - icon: book
+    name: book name
+    desc: Detailed description of the book
+    link: https://link.to.your.book
 
   - icon: article
     name: article name
@@ -34,12 +34,12 @@ projects:
   #   desc: Detailed description of friend
   #   link: https://link.to.your.friend
 
-  - icon: /favicon.ico
-    name: custom item
-    desc: Detailed description of this custom item
-    link: https://link.to.your.friend
+  # - icon: /favicon.ico
+  #   name: custom item
+  #   desc: Detailed description of this custom item
+  #   link: https://link.to.your.friend
 
 footer: Kory's blog
 ---
 
-If you have any ideas to share, please contact me at any time in your convenience
+If you have any ideas to share, please contact me at any time in your convenience.

@@ -25,7 +25,7 @@ export default hopeTheme({
       GitHub: "https://github.com/korykl",
       Gitee: "https://gitee.com/da-wei-liu",
       Linkedin: "https://www.linkedin.cn/incareer/in/ACoAAChiGB8BoHZIY3GXEyeAxfCUVmL5EpXQY6c",
-      Email: "l729641074@163.com",
+      // Email: "l729641074@163.com",
       // BiliBili: "https://example.com",
       // Baidu: "https://example.com",
       // Bitbucket: "https://example.com",
@@ -73,7 +73,7 @@ export default hopeTheme({
       displayFooter: true,
 
       blog: {
-        description: "A Junior Student of Northeastern University",
+        description: "majoring in information system",
         intro: "/intro.html",
       },
 
@@ -92,12 +92,12 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: " Kory's Blog",
+      footer: "况咏蓓的博客",
 
       displayFooter: true,
 
       blog: {
-        description: "一个名东大学子",
+        description: "一名信息管理与信息系统专业学生",
         intro: "/zh/intro.html",
       },
 

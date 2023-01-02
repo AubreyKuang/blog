@@ -8,12 +8,12 @@ export default defineUserConfig({
     "/": {
       lang: "en-US",
       title: "Kory's Blog",
-      description: "a developer of multiple interests",
+      description: "a developer majoring in information system",
     },
     "/zh/": {
       lang: "zh-CN",
-      title: "David的博客",
-      description: "一名涉猎广泛的开发者",
+      title: "况咏蓓的博客",
+      description: "一名信息系统专业学生",
     },
   },
 

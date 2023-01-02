@@ -4,4 +4,4 @@ icon: info
 
 # Intro Page for Kory
 
-Hello! I am Kory, a junior student majoring software engineering in Northeastern University! Nice to see you.
+Hello! I am Kory, a student majoring in information system of NEU! Nice to see you.
