@@ -2,78 +2,16 @@ import { navbar } from "vuepress-theme-hope";
 
 export const enNavbar = navbar([
   "/",
-  {
-    text: "Algorithm",
-    icon: "note",
-    prefix: "/algo/",
-    children: [
-      { text: "BASIC",
-      icon: "edit",
-      prefix: "basic/",
-      children: [
-        {
-          text: "parameter",
-          icon: "edit",
-          prefix: "parameter/",
-          link: "parameter/",
-          children: [
-            { text: "Transaction", icon: "edit", link: "transaction" },
-            { text: "Index", icon: "edit", link: "index" },
-            { text: "Lock", icon: "edit", link: "lock" },
-            { text: "Log", icon: "edit", link: "log" },
-          ]
-        },
-        // {
-        //   text: "Redis",
-        //   icon: "edit",
-        //   prefix: "redis/",
-        //   link: "redis/",
-        //   children: [
-        //     { text: "Clients", icon: "edit", link: "clients" },
-        //     { text: "Commands", icon: "edit", link: "commands" },
-        //     { text: "Data structure", icon: "edit", link: "data-structure" },
-        //   ]
-        // },
-      ]},
-      {
-        text: "SUMMARY",
-        icon: "edit",
-        prefix: "faq/",
-        children: [
-          {
-            text: "Business Analysis",
-            icon: "edit",
-            prefix: "ba/",
-            link: "ba/",
-            // children: [
-            //   { text: "Transaction", icon: "edit", link: "transaction" },
-            //   { text: "Index", icon: "edit", link: "index" },
-            //   { text: "Lock", icon: "edit", link: "lock" },
-            //   { text: "Log", icon: "edit", link: "log" },
-            // ]
-          },
-          // {
-          //   text: "Redis",
-          //   icon: "edit",
-          //   prefix: "redis/",
-          //   link: "redis/",
-          //   children: [
-          //     { text: "Clients", icon: "edit", link: "clients" },
-          //     { text: "Commands", icon: "edit", link: "commands" },
-          //     { text: "Data structure", icon: "edit", link: "data-structure" },
-          //   ]
-          // },
-        ]
-      },
-    ]
-  },
+  // 如果不需要子目录如下一行写法即可
+  "/algo/",
+  
+  
 
   {
     text: "Computer Science",
-    icon: "edit",
+    // icon: "edit",
     prefix: "/cs/",
     children: [
-
       {
         text: "Database",
         icon: "edit",
@@ -82,142 +20,50 @@ export const enNavbar = navbar([
           {
             text: "MySQL",
             icon: "edit",
-            prefix: "mysql/",
             link: "mysql/",
-            children: [
-              { text: "Transaction", icon: "edit", link: "transaction" },
-              { text: "Index", icon: "edit", link: "index" },
-              { text: "Lock", icon: "edit", link: "lock" },
-              { text: "Log", icon: "edit", link: "log" },
-            ]
           },
           {
             text: "Redis",
             icon: "edit",
-            prefix: "redis/",
             link: "redis/",
-            children: [
-              { text: "Clients", icon: "edit", link: "clients" },
-              { text: "Commands", icon: "edit", link: "commands" },
-              { text: "Data structure", icon: "edit", link: "data-structure" },
-            ]
           },
         ]
       },
       {
-        text: "Network",
+        text: "Basic",
         icon: "edit",
-        link: "network/",
-      },
-      {
-        text: "Operating System",
-        icon: "edit",
-        link: "os/",
-      },
-    ]
-  },
-
-
-  // {
-  //   text: "Software Engineer",
-  //   icon: "edit",
-  //   prefix: "/se/",
-  //   children: [
-  //     {
-  //       text: "Unix",
-  //       icon: "edit",
-  //       link: "unix/",
-  //       // prefix: "unix/",
-  //       // children: [
-  //       //   { text: "Apple1", icon: "edit", link: "1" },
-  //       //   { text: "Apple2", icon: "edit", link: "2" }
-  //       // ]
-  //     },
-  //     {
-  //       text: "Framework",
-  //       icon: "edit",
-  //       link: "framework/",
-  //     },
-  //     {
-  //       text: "Systen design",
-  //       icon: "edit",
-  //       link: "systen-design/",
-  //     },
-  //     "tools/",
-  //   ]
-  // },
-
-
-
-
-  {
-    text: "Information System ",
-    icon: "note",
-    prefix: "/is/",
-    children: [
-      { text: "DECISION",
-      icon: "edit",
-      prefix: "decision/",
-      children: [
-        {
-          text: "models",
-          icon: "edit",
-          prefix: "models/",
-          link: "models/",
-          // children: [
-          //   { text: "Transaction", icon: "edit", link: "transaction" },
-          //   { text: "Index", icon: "edit", link: "index" },
-          //   { text: "Lock", icon: "edit", link: "lock" },
-          //   { text: "Log", icon: "edit", link: "log" },
-          // ]
-        },
-        // {
-        //   text: "Redis",
-        //   icon: "edit",
-        //   prefix: "redis/",
-        //   link: "redis/",
-        //   children: [
-        //     { text: "Clients", icon: "edit", link: "clients" },
-        //     { text: "Commands", icon: "edit", link: "commands" },
-        //     { text: "Data structure", icon: "edit", link: "data-structure" },
-        //   ]
-        // },
-      ]},
-      {
-        text: "COMMERCIAL",
-        icon: "edit",
-        prefix: "commercial/",
         children: [
           {
-            text: "Business Analysis",
+            text: "Network",
             icon: "edit",
-            prefix: "ba/",
-            link: "ba/",
-            // children: [
-            //   { text: "Transaction", icon: "edit", link: "transaction" },
-            //   { text: "Index", icon: "edit", link: "index" },
-            //   { text: "Lock", icon: "edit", link: "lock" },
-            //   { text: "Log", icon: "edit", link: "log" },
-            // ]
+            link: "network/",
           },
-          // {
-          //   text: "Redis",
-          //   icon: "edit",
-          //   prefix: "redis/",
-          //   link: "redis/",
-          //   children: [
-          //     { text: "Clients", icon: "edit", link: "clients" },
-          //     { text: "Commands", icon: "edit", link: "commands" },
-          //     { text: "Data structure", icon: "edit", link: "data-structure" },
-          //   ]
-          // },
+          {
+            text: "Operating System",
+            icon: "edit",
+            link: "os/",
+          },
         ]
-      }
+      },
+      {
+        text: "Lang",
+        // icon: "note",
+        prefix: "lang/",
+        children: [
+          {
+            text: "Java",
+            icon: "edit",
+            link: "java/",
+          }
+        ]
+      },
     ]
   },
+  
+
   {
-    text: "Standardized",
-    icon: "edit",
+    text: "English Tests",
+    // icon: "edit",
     prefix: "/standardized/",
     children: [
       {
@@ -242,56 +88,28 @@ export const enNavbar = navbar([
       },
     ]
   },
-  // { text: "Demo", icon: "discover", link: "/demo/" },
-  // {
-  //   text: "Unix",
-  //   icon: "edit",
-  //   link: "/unix/"
-  // },
-  // {
-  //   text: "V2 Docs",
-  //   icon: "note",
-  //   link: "https://vuepress-theme-hope.github.io/v2/",
-  // },
-  // {
-  //   text: "Posts",
-  //   icon: "edit",
-  //   prefix: "/posts/",
-  //   children: [
-  //     {
-  //       text: "Apple",
-  //       icon: "edit",
-  //       prefix: "apple/",
-  //       children: [
-  //         { text: "Apple1", icon: "edit", link: "1" },
-  //         { text: "Apple2", icon: "edit", link: "2" },
-  //         "3",
-  //         "4",
-  //       ],
-  //     },
-  //     {
-  //       text: "Banana",
-  //       icon: "edit",
-  //       prefix: "banana/",
-  //       children: [
-  //         {
-  //           text: "Banana 1",
-  //           icon: "edit",
-  //           link: "1",
-  //         },
-  //         {
-  //           text: "Banana 2",
-  //           icon: "edit",
-  //           link: "2",
-  //         },
-  //         "3",
-  //         "4",
-  //       ],
-  //     },
-  //     { text: "Cherry", icon: "edit", link: "cherry" },
-  //     { text: "Dragon Fruit", icon: "edit", link: "dragonfruit" },
-  //     "tomato",
-  //     "strawberry",
-  //   ],
-  // },
+
+  {
+    text: "Information System",
+    // icon: "edit",
+    prefix: "/is/",
+    children: [
+      {
+        text: "Commercial",
+        icon: "edit",
+        link: "commercial/",
+      },
+      // 以下两种写法二选一即可，长的写法好处是可以带一个自定义的图标，短的没有图标
+      {
+        text: "Decision",
+        icon: "edit",
+        link: "decision/",
+      },
+
+      // "decision/",
+    ]
+  },
+
+
+
 ]);
