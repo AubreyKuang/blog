@@ -1,0 +1,5 @@
+
+User-agent:*
+Disallow:
+
+Sitemap: https://korykl.github.io/blog/blog/sitemap.xml
