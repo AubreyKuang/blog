@@ -3,11 +3,11 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://davidliuk.github.io/blog",
+  hostname: "https://korykl.github.io/blog",
 
   author: {
-    name: "David Liu",
-    url: "https://github.com/davidliuk",
+    name: "Kory",
+    url: "https://github.com/korykl",
   },
 
   iconAssets: "iconfont",
@@ -22,11 +22,11 @@ export default hopeTheme({
 
   blog: {
     medias: {
-      GitHub: "https://github.com/davidliuk",
+      GitHub: "https://github.com/korykl",
       Gitee: "https://gitee.com/da-wei-liu",
       Linkedin: "https://www.linkedin.cn/incareer/in/ACoAAChiGB8BoHZIY3GXEyeAxfCUVmL5EpXQY6c",
       Email: "l729641074@163.com",
-      BiliBili: "https://example.com",
+      // BiliBili: "https://example.com",
       // Baidu: "https://example.com",
       // Bitbucket: "https://example.com",
       // Dingding: "https://example.com",
@@ -68,7 +68,7 @@ export default hopeTheme({
       // sidebar
       sidebar: enSidebar,
 
-      footer: "David's Blog",
+      footer: "Kory's Blog",
 
       displayFooter: true,
 
@@ -92,7 +92,7 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: " David's Blog",
+      footer: " Kory's Blog",
 
       displayFooter: true,
 

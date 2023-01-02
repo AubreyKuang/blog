@@ -2,6 +2,6 @@
 icon: info
 ---
 
-# Intro Page for David
+# Intro Page for Kory
 
-Hello! I am David Liu, a junior student majoring software engineering in Northeastern University! Nice to see you.
+Hello! I am Kory, a junior student majoring software engineering in Northeastern University! Nice to see you.
