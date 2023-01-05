@@ -1,0 +1,1 @@
+import{_ as s,V as o,W as t,X as e,Y as c}from"./framework-a2b1dd72.js";const a={},d=e("h1",{id:"decision-models",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#decision-models","aria-hidden":"true"},"#"),c(" Decision Models")],-1),n=[d];function r(i,_){return o(),t("div",null,n)}const h=s(a,[["render",r],["__file","models.html.vue"]]);export{h as default};
