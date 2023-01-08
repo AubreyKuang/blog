@@ -6,6 +6,8 @@ export const enSidebar = sidebar({
   // 长写法好处还是可以自定义一个icon短的没有，同时长的可以子文件夹的名称自定义而不会直接继承README名称
   // "/algo/": "structure",
   "/algo/": "structure",
+
+  "/se/": "structure",
   // 如下短写法和长写法二选一，
   "/cs/database/mysql/": "structure",
   // "/cs/database/mysql/": [

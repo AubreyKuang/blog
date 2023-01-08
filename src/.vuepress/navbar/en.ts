@@ -4,6 +4,8 @@ export const enNavbar = navbar([
   "/",
   // 如果不需要子目录如下一行写法即可，认为是文件夹路径
   "/algo/",
+
+  "/se/",
   
   
 
@@ -60,7 +62,7 @@ export const enNavbar = navbar([
     ]
   },
   
-  "/se/",
+  
 
   // {
   //   text: "Software Engineering",
