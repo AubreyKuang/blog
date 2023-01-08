@@ -2,7 +2,7 @@ import { navbar } from "vuepress-theme-hope";
 
 export const enNavbar = navbar([
   "/",
-  // 如果不需要子目录如下一行写法即可
+  // 如果不需要子目录如下一行写法即可，认为是文件夹路径
   "/algo/",
   
   
@@ -60,6 +60,28 @@ export const enNavbar = navbar([
     ]
   },
   
+  "/se/",
+
+  // {
+  //   text: "Software Engineering",
+  //   // icon: "edit",
+  //   prefix: "/se/",
+
+  //   children: [
+  //     {
+  //       text: "FrontEnd",
+  //       icon: "edit",
+  //       link: "FrontEnd/",
+  //     },
+
+  //     {
+  //       text: "BackEnd",
+  //       icon: "edit",
+  //       link: "BackEnd/",
+  //     },
+
+  //   ]
+  // },
 
   {
     text: "English Tests",
