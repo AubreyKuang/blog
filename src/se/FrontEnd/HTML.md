@@ -305,7 +305,7 @@ Tr > th
 <input type = "text" placeholder=“请输入名称”>
 ```
 
-昵称：<input type = " text">
+昵称：\<input type = " text"\>
 
 
 
@@ -341,7 +341,7 @@ type = submit
 
 自定义：名为xx的按钮
 
-<input type="button" value="xx">
+\<input type="button" value="xx"\>
 
 
 
