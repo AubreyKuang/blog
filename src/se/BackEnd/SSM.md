@@ -16,9 +16,9 @@
 
 mysql
 
-![截屏2022-08-20 14.43.40](/Users/apple/Library/Application%20Support/typora-user-images/%E6%88%AA%E5%B1%8F2022-08-20%2014.43.40.png)
+![image-20230110122809137](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/image-20230110122809137.png)
 
-![截屏2022-08-20 14.47.23](/Users/apple/Library/Application%20Support/typora-user-images/%E6%88%AA%E5%B1%8F2022-08-20%2014.47.23.png)
+![截屏2022-08-20 14.47.23](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/%E6%88%AA%E5%B1%8F2022-08-20%2014.47.23.png)
 
 
 
@@ -87,7 +87,7 @@ spring在刚开始的时候使用工厂模式（DI）和代理模式（AOP）解
 
 1. 导入spring开发的基本包坐标
 
-   ![image-20220215112411676](/Users/apple/Library/Application Support/typora-user-images/image-20220215112411676.png)
+   ![image-20220215112411676](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/image-20220215112411676.png)
 
 2. 编写Dao借口和实现类（Bean）
 
@@ -95,14 +95,18 @@ spring在刚开始的时候使用工厂模式（DI）和代理模式（AOP）解
 
 3. 创建spring核心配置文件
 
-   <img src="/Users/apple/Library/Application Support/typora-user-images/image-20220215161506918.png" alt="image-20220215161506918" style="zoom:50%;" />
+   ![image-20230110122856473](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/image-20230110122856473.png)
 
-4. 在⬆️中配置UserDaolmpl
+   
 
-   ![image-20220215162023770](/Users/apple/Library/Application Support/typora-user-images/image-20220215162023770.png)
+   在⬆️中配置UserDaolmpl
+
+   ![image-20220215162023770](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/image-20220215162023770.png)
 
 5.
-使用spring的API获得bean实例![image-20220215163226946](/Users/apple/Library/Application Support/typora-user-images/image-20220215163226946.png)
+使用spring的API获得bean实例
+
+![image-20220215163226946](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/image-20220215163226946.png)
 
 #### Spring Bean
 
@@ -130,7 +134,7 @@ text/java
    > <context: component-scan base-package=""/>
    > ````
 
-![image-20220221142033663](/Users/apple/Library/Application Support/typora-user-images/image-20220221142033663.png)
+![image-20220221142033663](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/image-20220221142033663.png)
 
 除了最后两个，都是重点
 
