@@ -1,1 +1,0 @@
-import{_ as s,V as a,W as n,X as e,Y as t}from"./framework-a2b1dd72.js";const c={},r=e("h1",{id:"business-analysis",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#business-analysis","aria-hidden":"true"},"#"),t(" Business Analysis")],-1),i=[r];function o(_,d){return a(),n("div",null,i)}const h=s(c,[["render",o],["__file","ba.html.vue"]]);export{h as default};

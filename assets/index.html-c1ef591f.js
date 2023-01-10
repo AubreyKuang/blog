@@ -1,0 +1,1 @@
+import{_ as a,V as t,W as c,X as e,Y as i}from"./framework-91a010c2.js";const r={},o=e("h1",{id:"digital-commercial",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#digital-commercial","aria-hidden":"true"},"#"),i(" Digital Commercial")],-1),n=[o];function s(d,l){return t(),c("div",null,n)}const m=a(r,[["render",s],["__file","index.html.vue"]]);export{m as default};

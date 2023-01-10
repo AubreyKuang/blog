@@ -1,0 +1,1 @@
+import{_ as n,V as a,W as t,X as e,Y as c}from"./framework-91a010c2.js";const r={},i=e("h1",{id:"backend-engineering",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#backend-engineering","aria-hidden":"true"},"#"),c(" BackEnd Engineering")],-1),d=[i];function s(o,_){return a(),t("div",null,d)}const l=n(r,[["render",s],["__file","index.html.vue"]]);export{l as default};

@@ -1,0 +1,12 @@
+import{_ as s,V as n,W as a,a0 as e}from"./framework-91a010c2.js";const t={},p=e(`<h4 id="组件" tabindex="-1"><a class="header-anchor" href="#组件" aria-hidden="true">#</a> 组件</h4><ol><li><p>@Componet() 装饰器对应的TypeScript类</p><p>指定一个css选择器、一个html模版、一组可选的css</p><div class="language-typescript line-numbers-mode" data-ext="ts"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;@angular/core&#39;</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Component</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token operator">:</span> <span class="token string">&#39;hello-world&#39;</span><span class="token punctuation">,</span>
+  template<span class="token operator">:</span>&#39;<span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span> Hello <span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+  					<span class="token operator">&lt;</span>p<span class="token operator">&gt;</span> aha <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>&#39;
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorldComponent</span><span class="token punctuation">{</span>
+  <span class="token comment">//决定component行为</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li><li><p>HTML模版</p></li><li><p>样式文件</p></li></ol>`,2),o=[p];function l(c,r){return n(),a("div",null,o)}const d=s(t,[["render",l],["__file","基本.html.vue"]]);export{d as default};

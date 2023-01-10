@@ -1,1 +1,0 @@
-import{_ as t,V as a,W as c,X as e,Y as i}from"./framework-a2b1dd72.js";const r={},s=e("h1",{id:"digital-practices",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#digital-practices","aria-hidden":"true"},"#"),i(" Digital Practices")],-1),n=[s];function d(o,_){return a(),c("div",null,n)}const h=t(r,[["render",d],["__file","index.html.vue"]]);export{h as default};

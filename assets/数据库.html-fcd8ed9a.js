@@ -1,0 +1,1 @@
+import{_,V as t,W as o,X as e}from"./framework-91a010c2.js";const s={},c=e("p",null,"数据库：以一定格式存放，实现多用户共享",-1),n=e("p",null,"数据库管理系统：MySQL等",-1),l=[c,n];function r(a,d){return t(),o("div",null,l)}const f=_(s,[["render",r],["__file","数据库.html.vue"]]);export{f as default};

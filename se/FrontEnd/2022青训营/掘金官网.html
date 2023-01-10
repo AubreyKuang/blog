@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-beta.58" />
+    <meta name="theme" content="VuePress Theme Hope" />
+    <meta property="og:url" content="https://korykl.github.io/blog/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html"><meta property="og:site_name" content="Kory's Blog"><meta property="og:title" content="一、项目介绍"><meta property="og:description" content="一、项目介绍 利用vite + vue3技术栈仿掘金官网首页实现无限滚动列表，Markdown解析、自动生成toc目录、toc自动滚动等功能。 项目服务地址-必须 Github 地址，权限设置为 public- 必须 二、项目分工 团队成员 主要贡献 刘大维 负责开发post页面，实现markdown解析toc目录、自动高亮 况咏蓓 参与开发post页面，实现markdown解析toc目录 钱霖奕 负责开发，参与首页顶部导航栏和侧边栏的设计及后端的开发 常智凯 负责选型，参与整体布局和路由编写，完成首页信息流相关组件开发，完善首页其它组件功能"><meta property="og:type" content="article"><meta property="og:updated_time" content="2023-01-08T14:46:46.000Z"><meta property="og:locale" content="en-US"><meta property="og:locale:alternate" content="zh-CN"><meta property="article:modified_time" content="2023-01-08T14:46:46.000Z"><link rel="alternate" hreflang="zh-cn" href="https://korykl.github.io/blog/blog/zh/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html"><link rel="icon" href="/blog/favicon.ico"><link rel="icon" href="/blog/assets/icon/512.png" type="image/png" sizes="512x512"><link rel="icon" href="/blog/assets/icon/196.png" type="image/png" sizes="192x192"><link rel="icon" href="/blog/assets/icon/196.png" type="image/png" sizes="196x196"><link rel="manifest" href="/blog/manifest.webmanifest" crossorigin="use-credentials"><meta name="theme-color" content="#46bd87"><link rel="apple-touch-icon" href="/blog/assets/icon/152.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="msapplication-TileImage" content="/blog/assets/icon/144.png"><meta name="msapplication-TileColor" content="#ffffff"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><title>一、项目介绍 | Kory's Blog</title><meta name="description" content="一、项目介绍 利用vite + vue3技术栈仿掘金官网首页实现无限滚动列表，Markdown解析、自动生成toc目录、toc自动滚动等功能。 项目服务地址-必须 Github 地址，权限设置为 public- 必须 二、项目分工 团队成员 主要贡献 刘大维 负责开发post页面，实现markdown解析toc目录、自动高亮 况咏蓓 参与开发post页面，实现markdown解析toc目录 钱霖奕 负责开发，参与首页顶部导航栏和侧边栏的设计及后端的开发 常智凯 负责选型，参与整体布局和路由编写，完成首页信息流相关组件开发，完善首页其它组件功能">
+    <style>
+      :root {
+        --bg-color: #fff;
+      }
+
+      html[data-theme="dark"] {
+        --bg-color: #1d2025;
+      }
+
+      html,
+      body {
+        background: var(--bg-color);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
+        document.querySelector("html").setAttribute("data-theme", "dark");
+      }
+    </script>
+    <link rel="preload" href="/blog/assets/style-d7eb96b9.css" as="style"><link rel="stylesheet" href="/blog/assets/style-d7eb96b9.css">
+    <link rel="modulepreload" href="/blog/assets/app-8a26812c.js"><link rel="modulepreload" href="/blog/assets/framework-91a010c2.js"><link rel="modulepreload" href="/blog/assets/掘金官网.html-6cbeb7c2.js"><link rel="modulepreload" href="/blog/assets/掘金官网.html-33e33859.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="skip-link sr-only">Skip to main content</a><!--]--><div class="theme-container has-toc"><!--[--><!--[--><header class="navbar"><div class="navbar-left"><button class="toggle-sidebar-button" title="Toggle Sidebar"><span class="icon"></span></button><!--[--><!----><!--]--><a href="/blog/" class="brand"><img class="logo" src="/blog/favicon.ico" alt="Kory&#39;s Blog"><!----><span class="site-name hide-in-pad">Kory&#39;s Blog</span></a><!--[--><!----><!--]--></div><div class="navbar-center"><!--[--><!----><!--]--><nav class="nav-links"><div class="nav-item hide-in-mobile"><a href="/blog/" class="nav-link" aria-label="Home"><span class="icon iconfont icon-home"></span>Home<!----></a></div><div class="nav-item hide-in-mobile"><a href="/blog/algo/" class="nav-link" aria-label="Algorithm"><!---->Algorithm<!----></a></div><div class="nav-item hide-in-mobile"><a href="/blog/se/" class="nav-link active" aria-label="Software Engineering"><!---->Software Engineering<!----></a></div><div class="nav-item hide-in-mobile"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="Computer Science"><span class="title"><!---->Computer Science</span><span class="arrow"></span><ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>Database</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/cs/database/mysql/" class="nav-link" aria-label="MySQL"><span class="icon iconfont icon-edit"></span>MySQL<!----></a></li><li class="dropdown-subitem"><a href="/blog/cs/database/redis/" class="nav-link" aria-label="Redis"><span class="icon iconfont icon-edit"></span>Redis<!----></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>Basic</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/cs/network/" class="nav-link" aria-label="Network"><span class="icon iconfont icon-edit"></span>Network<!----></a></li><li class="dropdown-subitem"><a href="/blog/cs/os/" class="nav-link" aria-label="Operating System"><span class="icon iconfont icon-edit"></span>Operating System<!----></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>Lang</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/cs/lang/java/" class="nav-link" aria-label="Java"><span class="icon iconfont icon-edit"></span>Java<!----></a></li></ul></li></ul></button></div></div><div class="nav-item hide-in-mobile"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="English Tests"><span class="title"><!---->English Tests</span><span class="arrow"></span><ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>GRE</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/standardized/GRE/QUANTITATIVE" class="nav-link" aria-label="QUANTITATIVE"><span class="icon iconfont icon-edit"></span>QUANTITATIVE<!----></a></li><li class="dropdown-subitem"><a href="/blog/standardized/GRE/VERBAL" class="nav-link" aria-label="VERBAL"><span class="icon iconfont icon-edit"></span>VERBAL<!----></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>TOEFL</span></h4><ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/standardized/TOEFL/LISTENING" class="nav-link" aria-label="LISTENING"><span class="icon iconfont icon-edit"></span>LISTENING<!----></a></li><li class="dropdown-subitem"><a href="/blog/standardized/TOEFL/READING" class="nav-link" aria-label="READING"><span class="icon iconfont icon-edit"></span>READING<!----></a></li><li class="dropdown-subitem"><a href="/blog/standardized/TOEFL/SPEAKING" class="nav-link" aria-label="SPEAKING"><span class="icon iconfont icon-edit"></span>SPEAKING<!----></a></li><li class="dropdown-subitem"><a href="/blog/standardized/TOEFL/WRITING" class="nav-link" aria-label="WRITING"><span class="icon iconfont icon-edit"></span>WRITING<!----></a></li></ul></li></ul></button></div></div><div class="nav-item hide-in-mobile"><div class="dropdown-wrapper"><button class="dropdown-title" type="button" aria-label="Information System"><span class="title"><!---->Information System</span><span class="arrow"></span><ul class="nav-dropdown"><li class="dropdown-item"><a href="/blog/is/commercial/" class="nav-link" aria-label="Commercial"><span class="icon iconfont icon-edit"></span>Commercial<!----></a></li><li class="dropdown-item"><a href="/blog/is/decision/" class="nav-link" aria-label="Decision"><span class="icon iconfont icon-edit"></span>Decision<!----></a></li></ul></button></div></div></nav><!--[--><!----><!--]--></div><div class="navbar-right"><!--[--><!----><!--]--><div class="nav-item"><div class="dropdown-wrapper i18n-dropdown"><button class="dropdown-title" type="button" aria-label="Select language"><!--[--><svg xmlns="http://www.w3.org/2000/svg" class="icon i18n-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="i18n icon" style="width:1rem;height:1rem;vertical-align:middle;"><path d="M379.392 460.8 494.08 575.488l-42.496 102.4L307.2 532.48 138.24 701.44l-71.68-72.704L234.496 460.8l-45.056-45.056c-27.136-27.136-51.2-66.56-66.56-108.544h112.64c7.68 14.336 16.896 27.136 26.112 35.84l45.568 46.08 45.056-45.056C382.976 312.32 409.6 247.808 409.6 204.8H0V102.4h256V0h102.4v102.4h256v102.4H512c0 70.144-37.888 161.28-87.04 210.944L378.88 460.8zM576 870.4 512 1024H409.6l256-614.4H768l256 614.4H921.6l-64-153.6H576zM618.496 768h196.608L716.8 532.48 618.496 768z"></path></svg><!--]--><span class="arrow"></span><ul class="nav-dropdown"><li class="dropdown-item"><a aria-current="page" href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html" class="router-link-active router-link-exact-active nav-link active" aria-label="English"><!---->English<!----></a></li><li class="dropdown-item"><a href="/blog/zh/" class="nav-link" aria-label="简体中文"><!---->简体中文<!----></a></li></ul></button></div></div><div class="nav-item"><a class="repo-link" href="https://github.com/vuepress-theme-hope/vuepress-theme-hope" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" class="icon github-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="github icon" style="width:1.25rem;height:1.25rem;vertical-align:middle;"><path d="M511.957 21.333C241.024 21.333 21.333 240.981 21.333 512c0 216.832 140.544 400.725 335.574 465.664 24.49 4.395 32.256-10.07 32.256-23.083 0-11.69.256-44.245 0-85.205-136.448 29.61-164.736-64.64-164.736-64.64-22.315-56.704-54.4-71.765-54.4-71.765-44.587-30.464 3.285-29.824 3.285-29.824 49.195 3.413 75.179 50.517 75.179 50.517 43.776 75.008 114.816 53.333 142.762 40.79 4.523-31.66 17.152-53.377 31.19-65.537-108.971-12.458-223.488-54.485-223.488-242.602 0-53.547 19.114-97.323 50.517-131.67-5.035-12.33-21.93-62.293 4.779-129.834 0 0 41.258-13.184 134.912 50.346a469.803 469.803 0 0 1 122.88-16.554c41.642.213 83.626 5.632 122.88 16.554 93.653-63.488 134.784-50.346 134.784-50.346 26.752 67.541 9.898 117.504 4.864 129.834 31.402 34.347 50.474 78.123 50.474 131.67 0 188.586-114.73 230.016-224.042 242.09 17.578 15.232 33.578 44.672 33.578 90.454v135.85c0 13.142 7.936 27.606 32.854 22.87C862.25 912.597 1002.667 728.747 1002.667 512c0-271.019-219.648-490.667-490.71-490.667z"></path></svg></a></div><div class="nav-item hide-in-mobile"><button id="appearance-switch"><svg xmlns="http://www.w3.org/2000/svg" class="icon auto-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="auto icon" style="display:block;"><path d="M512 992C246.92 992 32 777.08 32 512S246.92 32 512 32s480 214.92 480 480-214.92 480-480 480zm0-840c-198.78 0-360 161.22-360 360 0 198.84 161.22 360 360 360s360-161.16 360-360c0-198.78-161.22-360-360-360zm0 660V212c165.72 0 300 134.34 300 300 0 165.72-134.28 300-300 300z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon dark-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="dark icon" style="display:none;"><path d="M524.8 938.667h-4.267a439.893 439.893 0 0 1-313.173-134.4 446.293 446.293 0 0 1-11.093-597.334A432.213 432.213 0 0 1 366.933 90.027a42.667 42.667 0 0 1 45.227 9.386 42.667 42.667 0 0 1 10.24 42.667 358.4 358.4 0 0 0 82.773 375.893 361.387 361.387 0 0 0 376.747 82.774 42.667 42.667 0 0 1 54.187 55.04 433.493 433.493 0 0 1-99.84 154.88 438.613 438.613 0 0 1-311.467 128z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon light-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="light icon" style="display:none;"><path d="M952 552h-80a40 40 0 0 1 0-80h80a40 40 0 0 1 0 80zM801.88 280.08a41 41 0 0 1-57.96-57.96l57.96-58a41.04 41.04 0 0 1 58 58l-58 57.96zM512 752a240 240 0 1 1 0-480 240 240 0 0 1 0 480zm0-560a40 40 0 0 1-40-40V72a40 40 0 0 1 80 0v80a40 40 0 0 1-40 40zm-289.88 88.08-58-57.96a41.04 41.04 0 0 1 58-58l57.96 58a41 41 0 0 1-57.96 57.96zM192 512a40 40 0 0 1-40 40H72a40 40 0 0 1 0-80h80a40 40 0 0 1 40 40zm30.12 231.92a41 41 0 0 1 57.96 57.96l-57.96 58a41.04 41.04 0 0 1-58-58l58-57.96zM512 832a40 40 0 0 1 40 40v80a40 40 0 0 1-80 0v-80a40 40 0 0 1 40-40zm289.88-88.08 58 57.96a41.04 41.04 0 0 1-58 58l-57.96-58a41 41 0 0 1 57.96-57.96z"></path></svg></button></div><!----><!--[--><!----><!--]--><button class="toggle-navbar-button" aria-label="Toggle Navbar" aria-expanded="false" aria-controls="nav-screen"><span class="button-container"><span class="button-top"></span><span class="button-middle"></span><span class="button-bottom"></span></span></button></div></header><!----><!--]--><!----><div class="toggle-sidebar-wrapper"><span class="arrow left"></span></div><aside class="sidebar"><!--[--><!----><!--]--><ul class="sidebar-links"><li><!--[--><a href="/blog/se/" class="nav-link sidebar-link sidebar-page" aria-label="Software Engineering"><!---->Software Engineering<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><section class="sidebar-group"><button class="sidebar-heading clickable"><!----><span class="title">BackEnd Engineering</span><span class="arrow right"></span></button><!----></section></li><li><section class="sidebar-group"><button class="sidebar-heading clickable active"><!----><span class="title">FrontEnd Engineering</span><span class="arrow down"></span></button><ul class="sidebar-links"><li><!--[--><a href="/blog/se/FrontEnd/" class="nav-link sidebar-link sidebar-page" aria-label="FrontEnd Engineering"><!---->FrontEnd Engineering<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/CSS.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/CSS.md"><!---->/se/FrontEnd/CSS.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/ECMAScript6.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/ECMAScript6.md"><!---->/se/FrontEnd/ECMAScript6.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/HTML.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/HTML.md"><!---->/se/FrontEnd/HTML.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/JS.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/JS.md"><!---->/se/FrontEnd/JS.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/Node.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/Node.md"><!---->/se/FrontEnd/Node.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/React.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/React.md"><!---->/se/FrontEnd/React.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/Vue.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/Vue.md"><!---->/se/FrontEnd/Vue.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><section class="sidebar-group"><button class="sidebar-heading clickable active"><!----><span class="title">2022青训营</span><span class="arrow down"></span></button><ul class="sidebar-links"><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/4%20%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/4 前端设计模式.md"><!---->/se/FrontEnd/2022青训营/4 前端设计模式.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/5%20Web%E6%A0%87%E5%87%86%E4%B8%8E%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/5 Web标准与前端开发.md"><!---->/se/FrontEnd/2022青训营/5 Web标准与前端开发.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/6%20Web%E5%BC%80%E5%8F%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E6%97%85.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/6 Web开发的安全之旅.md"><!---->/se/FrontEnd/2022青训营/6 Web开发的安全之旅.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/7%20HTTP%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/7 HTTP实用指南.md"><!---->/se/FrontEnd/2022青训营/7 HTTP实用指南.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/8%20%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/8 开发调试.md"><!---->/se/FrontEnd/2022青训营/8 开发调试.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/9%20TypeScript.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/9 TypeScript.md"><!---->/se/FrontEnd/2022青训营/9 TypeScript.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/10%20%E5%93%8D%E5%BA%94%E5%BC%8F%E7%B3%BB%E7%BB%9F%E4%B8%8EReact.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/10 响应式系统与React.md"><!---->/se/FrontEnd/2022青训营/10 响应式系统与React.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/11%20Node.js.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/11 Node.js.md"><!---->/se/FrontEnd/2022青训营/11 Node.js.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/12%20WebPack.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/12 WebPack.md"><!---->/se/FrontEnd/2022青训营/12 WebPack.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/13%20Vite.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/13 Vite.md"><!---->/se/FrontEnd/2022青训营/13 Vite.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/14%20WebGL%E4%B8%8E%E5%8A%A8%E7%94%BB.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/14 WebGL与动画.md"><!---->/se/FrontEnd/2022青训营/14 WebGL与动画.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/15%20%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E5%9F%BA%E7%A1%80.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/15 数据可视化基础.md"><!---->/se/FrontEnd/2022青训营/15 数据可视化基础.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/16%20%E5%B0%8F%E6%B8%B8%E6%88%8F.html" class="nav-link sidebar-link sidebar-page" aria-label="/se/FrontEnd/2022青训营/16 小游戏.md"><!---->/se/FrontEnd/2022青训营/16 小游戏.md<!----></a><ul class="sidebar-sub-headers"></ul><!--]--></li><li><!--[--><a aria-current="page" href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html" class="router-link-active router-link-exact-active nav-link active sidebar-link sidebar-page active" aria-label="一、项目介绍"><!---->一、项目介绍<!----></a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a aria-current="page" href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html#_3-1-技术选型与相关功能实现" class="router-link-active router-link-exact-active nav-link sidebar-link heading" aria-label="3.1 技术选型与相关功能实现"><!---->3.1 技术选型与相关功能实现<!----></a><ul class="sidebar-sub-headers"></ul></li><li class="sidebar-sub-header"><a aria-current="page" href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html#_3-2-架构设计" class="router-link-active router-link-exact-active nav-link sidebar-link heading" aria-label="3.2 架构设计"><!---->3.2 架构设计<!----></a><ul class="sidebar-sub-headers"></ul></li><li class="sidebar-sub-header"><a aria-current="page" href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html#_3-3-项目代码介绍" class="router-link-active router-link-exact-active nav-link sidebar-link heading" aria-label="3.3 项目代码介绍"><!---->3.3 项目代码介绍<!----></a><ul class="sidebar-sub-headers"></ul></li></ul><!--]--></li></ul></section></li><li><section class="sidebar-group"><button class="sidebar-heading clickable"><!----><span class="title">Vue</span><span class="arrow right"></span></button><!----></section></li></ul></section></li></ul><!--[--><!----><!--]--></aside><!--[--><main class="page" id="main-content"><!--[--><!----><nav class="breadcrumb disable"></nav><div class="page-title"><h1><!---->一、项目介绍</h1><div class="page-info"><span class="author-info" aria-label="Author🖊" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon author-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="author icon"><path d="M649.6 633.6c86.4-48 147.2-144 147.2-249.6 0-160-128-288-288-288s-288 128-288 288c0 108.8 57.6 201.6 147.2 249.6-121.6 48-214.4 153.6-240 288-3.2 9.6 0 19.2 6.4 25.6 3.2 9.6 12.8 12.8 22.4 12.8h704c9.6 0 19.2-3.2 25.6-12.8 6.4-6.4 9.6-16 6.4-25.6-25.6-134.4-121.6-240-243.2-288z"></path></svg><span><a class="author-item" href="https://github.com/korykl" target="_blank" rel="noopener noreferrer">Kory</a></span><span property="author" content="Kory"></span></span><!----><span class="date-info" aria-label="Writing Date📅" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon calendar-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="calendar icon"><path d="M716.4 110.137c0-18.753-14.72-33.473-33.472-33.473-18.753 0-33.473 14.72-33.473 33.473v33.473h66.993v-33.473zm-334.87 0c0-18.753-14.72-33.473-33.473-33.473s-33.52 14.72-33.52 33.473v33.473h66.993v-33.473zm468.81 33.52H716.4v100.465c0 18.753-14.72 33.473-33.472 33.473a33.145 33.145 0 01-33.473-33.473V143.657H381.53v100.465c0 18.753-14.72 33.473-33.473 33.473a33.145 33.145 0 01-33.473-33.473V143.657H180.6A134.314 134.314 0 0046.66 277.595v535.756A134.314 134.314 0 00180.6 947.289h669.74a134.36 134.36 0 00133.94-133.938V277.595a134.314 134.314 0 00-133.94-133.938zm33.473 267.877H147.126a33.145 33.145 0 01-33.473-33.473c0-18.752 14.72-33.473 33.473-33.473h736.687c18.752 0 33.472 14.72 33.472 33.473a33.145 33.145 0 01-33.472 33.473z"></path></svg><span><!----></span><meta property="datePublished" content="2023-01-08T14:46:46.000Z"></span><!----><!----><span class="reading-time-info" aria-label="Reading Time⌛" data-balloon-pos="down"><svg xmlns="http://www.w3.org/2000/svg" class="icon timer-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="timer icon"><path d="M799.387 122.15c4.402-2.978 7.38-7.897 7.38-13.463v-1.165c0-8.933-7.38-16.312-16.312-16.312H256.33c-8.933 0-16.311 7.38-16.311 16.312v1.165c0 5.825 2.977 10.874 7.637 13.592 4.143 194.44 97.22 354.963 220.201 392.763-122.204 37.542-214.893 196.511-220.2 389.397-4.661 5.049-7.638 11.651-7.638 19.03v5.825h566.49v-5.825c0-7.379-2.849-13.981-7.509-18.9-5.049-193.016-97.867-351.985-220.2-389.527 123.24-37.67 216.446-198.453 220.588-392.892zM531.16 450.445v352.632c117.674 1.553 211.787 40.778 211.787 88.676H304.097c0-48.286 95.149-87.382 213.728-88.676V450.445c-93.077-3.107-167.901-81.297-167.901-177.093 0-8.803 6.99-15.793 15.793-15.793 8.803 0 15.794 6.99 15.794 15.793 0 80.261 63.69 145.635 142.01 145.635s142.011-65.374 142.011-145.635c0-8.803 6.99-15.793 15.794-15.793s15.793 6.99 15.793 15.793c0 95.019-73.789 172.82-165.96 177.093z"></path></svg><span>About 11 min</span><meta property="timeRequired" content="PT11M"></span></div><hr></div><div class="toc-place-holder"><aside id="toc"><div class="toc-header">On This Page</div><div class="toc-wrapper"><ul class="toc-list"><!--[--><li class="toc-item"><a aria-current="page" href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html#_3-1-技术选型与相关功能实现" class="router-link-active router-link-exact-active toc-link level3">3.1 技术选型与相关功能实现</a></li><!----><!--]--><!--[--><li class="toc-item"><a aria-current="page" href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html#_3-2-架构设计" class="router-link-active router-link-exact-active toc-link level3">3.2 架构设计</a></li><!----><!--]--><!--[--><li class="toc-item"><a aria-current="page" href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/%E6%8E%98%E9%87%91%E5%AE%98%E7%BD%91.html#_3-3-项目代码介绍" class="router-link-active router-link-exact-active toc-link level3">3.3 项目代码介绍</a></li><!----><!--]--></ul></div></aside></div><!----><div class="theme-hope-content"><h1 id="一、项目介绍" tabindex="-1"><a class="header-anchor" href="#一、项目介绍" aria-hidden="true">#</a> 一、项目介绍</h1><blockquote><p>利用vite + vue3技术栈仿掘金官网首页实现无限滚动列表，Markdown解析、自动生成toc目录、toc自动滚动等功能。</p><p>项目服务地址-必须</p><p>Github 地址，权限设置为 public- 必须</p></blockquote><h1 id="二、项目分工" tabindex="-1"><a class="header-anchor" href="#二、项目分工" aria-hidden="true">#</a> 二、项目分工</h1><table><thead><tr><th><strong>团队成员</strong></th><th><strong>主要贡献</strong></th></tr></thead><tbody><tr><td>刘大维</td><td>负责开发post页面，实现markdown解析toc目录、自动高亮</td></tr><tr><td>况咏蓓</td><td>参与开发post页面，实现markdown解析toc目录</td></tr><tr><td>钱霖奕</td><td>负责开发，参与首页顶部导航栏和侧边栏的设计及后端的开发</td></tr><tr><td>常智凯</td><td>负责选型，参与整体布局和路由编写，完成首页信息流相关组件开发，完善首页其它组件功能</td></tr></tbody></table><h1 id="三、项目实现" tabindex="-1"><a class="header-anchor" href="#三、项目实现" aria-hidden="true">#</a> 三、项目实现</h1><h3 id="_3-1-技术选型与相关功能实现" tabindex="-1"><a class="header-anchor" href="#_3-1-技术选型与相关功能实现" aria-hidden="true">#</a> 3.1 技术选型与相关功能实现</h3><p>前端：html, css, javascript, Vue3, element-ui, Vue-cli</p><p>前后端交互：axios</p><p>后端：python, flask</p><p><strong>要解决的问题1：整体布局分析</strong></p><p>分析首页布局以及文章展示页布局，分割组件开发，一方面便于分工协作，另一方面可以抽取公共组件和功能减少代码冗余，避免重复开发。利用vueRoute进行页面布局管理，实现组件使用最大化。</p><p><strong>要解决的问题2：细节效果分析</strong></p><p>力求模仿官网达到最佳效果，需要对官网的每一个细节功能进行分析，如导航栏部分会跟随文档上下滚动时进行展示或隐藏；文章列表部分，当鼠标悬停时选中的条目颜色发生改变且在右上角出现关闭按钮，悬停在作者名称处将展示作者详情，骨架屏展示等。需要设置动态类名，以及相应的CSS设置，包括display属性、visible属性、transform属性等。骨架屏通过arco-design实现。</p><p><strong>要解决的问题3：无限滚动列表</strong></p><p>首页列表的无限滚动，关键在于合适的时机请求数据并展示数据，数据请求时机可以通过滚动条距离页面底部的距离确定，距离的计算参考MDN关于Element.scrollHeight属性，有<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollHeight#%E5%88%A4%E6%96%AD%E5%85%83%E7%B4%A0%E6%98%AF%E5%90%A6%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%BA%95" target="_blank" rel="noopener noreferrer">判断元素是否滚动到底<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>的方案，在vue中进行一定封装方便使用。当列表滚动到底时，请求数据并将得到的新数据添加至总数据的尾部，vue在虚拟DOM中比较后将只渲染新数据部分的列表。</p><p><strong>要解决的问题4：markdown解析</strong></p><p>采用marked.js实现文章解析，marked 是一个 JavaScript 编写的Markdown 解析和编译器，可以快速地编译大块的Markdown文本，并且已完全兼容客户端浏览器。对于组件的原生渲染，先把markdown解析成tokens，再交由html的renderer处理。</p><p><strong>要解决的问题5：<strong><strong>文章</strong></strong>toc自动生成、toc目录随页面滚动自动高亮</strong></p><ol><li><p>按照文章先后顺序解析元素，将内容数据记录到数组中，并由此生成toc目录。</p></li><li><p>监控scroll，获取元素距离顶部的距离，并根据页面的滚动方向，从而判断浏览位置，从而对toc目录中的对应元素高亮。</p></li></ol><p><strong>要解决的问题6：Markdown文章渲染与代码高亮</strong></p><p>采用highlight.js进行代码高亮，创建v- highlight全局指令，从而实现在vue组件中应用代码高亮。</p><p><strong>要解决的问题7：后端数据与<strong><strong>前端</strong></strong>接口设计</strong></p><ol><li><p>后端语言和框架选择：Python + Flask，轻量化与模块化，可拓展性强</p></li><li><p>前后端分离：Vue 跨域配置，Flask 使用 flask_cors 开放跨域限制</p></li><li><p>前后端数据交互：使用 axios 进行数据交互，通过 POST 方法在 request body 中传递参数</p></li><li><p>后端功能：注册，登录，文章列表，新建文章，删除文章等</p></li></ol><h3 id="_3-2-架构设计" tabindex="-1"><a class="header-anchor" href="#_3-2-架构设计" aria-hidden="true">#</a> 3.2 架构设计</h3><h3 id="_3-3-项目代码介绍" tabindex="-1"><a class="header-anchor" href="#_3-3-项目代码介绍" aria-hidden="true">#</a> 3.3 项目代码介绍</h3><ol><li><h5 id="前端部分" tabindex="-1"><a class="header-anchor" href="#前端部分" aria-hidden="true">#</a> 前端部分</h5></li><li><p>项目文件</p></li></ol><div class="language-undefined line-numbers-mode" data-ext="undefined"><pre class="language-undefined"><code>JUEJIN\SRC
+│  App.vue
+│  main.ts
+│  style.css
+├─components
+│        AppTopNav.vue --顶部导航栏
+│        AppSideBar.vue --侧边栏
+│   
+│  
+├─views
+│  │
+│  ├─home
+│  │    AuthorInfo.vue --作者相关信息
+│  │    ListNav.vue --文章列表导航栏
+│  │    List.vue --文章列表
+│  │    Login.vue --登录
+│  │    Register.vue --注册
+│  │
+│  ├─post
+│  │    AuthorInfo.vue --作者简要信息
+│  │    Aside.vue --文章页侧边栏
+│  │    Article.vue --文章展示
+│  │    Catalog.vue -- toc目录
+│  │    Content.vue -- Markdown文章显示区
+│  │    NewArticle.vue -- 新建文章页面
+│  │    ShowPost.vue -- 文章列表
+│  │
+│  └─Layout.vue --总体布局
+│
+├─fake-api
+│      Article.ts --测试用文章数据
+│      index.js --测试用首页列表数据
+│
+├─router
+│      index.js --路由模块
+│
+└─request
+        index.ts --请求模块
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>Vue 跨域配置</li></ol><div class="language-JavaScript line-numbers-mode" data-ext="JavaScript"><pre class="language-JavaScript"><code>// 添加跨域
+server: {
+  open: false, // 自动打开
+  base: &quot;./ &quot;, // 生产环境路径
+  proxy: { // 本地开发环境通过代理实现跨域，生产环境使用 nginx 转发
+    // 正则表达式写法
+    &#39;^/api&#39;: {
+      target: &#39;http://localhost:5000&#39;, // 后端服务实际地址
+      changeOrigin: true, //开启代理
+      rewrite: (path) =&gt; path.replace(/^\/api/, &#39;&#39;)
+    }
+  }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>通过 axios 进行前后端数据交互示例：前端获取后端数据库的所有文章</li></ol><div class="language-JavaScript line-numbers-mode" data-ext="JavaScript"><pre class="language-JavaScript"><code>import axios from &quot;axios&quot;;
+
+export default {
+  name: &quot;ShowPost&quot;,
+  data() {
+    return {
+      data: {},
+    };
+  },
+  created() {
+    axios
+        .post(
+            &quot;/api/user/post&quot;,
+        )
+        .then((response) =&gt; {
+          console.log(response)
+          this.data = response.data
+        });
+  },
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>首页无限流（参考MDN和<a href="https://juejin.cn/post/6952762391566221343%EF%BC%89" target="_blank" rel="noopener noreferrer">https://juejin.cn/post/6952762391566221343）<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li></ol><div class="language-TypeScript line-numbers-mode" data-ext="TypeScript"><pre class="language-TypeScript"><code>setup() {
+    //滚动事件处理函数
+    const animation = ref(true);
+    function scrollHandle() {
+      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      const scrollHeight = document.body.scrollHeight;
+      const clientHeight = document.body.clientHeight;
+
+      //距离=总高-滚动距离-可视区高
+      let distance = scrollHeight - scrollTop - clientHeight;
+      if(distance &lt; 50) {
+        loadMore()
+        // console.log( distance );
+      }
+    }
+
+    onMounted(() =&gt; {
+      //组件挂载时，添加scroll监听
+      window.addEventListener(&quot;scroll&quot;, scrollHandle, false);
+      // console.log(&#39;onMounted&#39;);
+    });
+    onUnmounted(() =&gt; {
+      //组件卸载时，停止监听
+      window.removeEventListener(&quot;scroll&quot;, scrollHandle, false);
+    });
+    const datas = ref([])
+    let readyForLoad = true; //默认允许加载一次
+    loadMore()
+    // 内容加载函数
+    function loadMore() {
+      if (readyForLoad) {
+        //需要加载才进来，防止重复
+        readyForLoad = false; //进来了就&quot;锁上&quot;
+
+        getArticles().then((res) =&gt; {
+          datas.value = [...datas.value, ...res.data.articles];
+          // console.log(datas.value);
+          readyForLoad = true; //加载完了才&quot;开锁&quot;，允许再次触发
+        });
+      }
+    }
+    let isActive = ref(false); //控制屏蔽标签下拉激活
+    return {
+      datas, //返回出去，以便在template里使用
+      isActive,
+      AuthorInfo,
+      animation,
+    };
+  },
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li><h5 id="后端部分" tabindex="-1"><a class="header-anchor" href="#后端部分" aria-hidden="true">#</a> 后端部分</h5></li><li><p>初始化</p></li></ol><p>创建工厂函数，在启动文件里直接调用生成 Flask App</p><div class="language-Python line-numbers-mode" data-ext="Python"><pre class="language-Python"><code># 工厂函数
+def create_app(config_name=None):
+    if config_name is None:
+        config_name = os.getenv(&#39;FLASK_CONFIG&#39;, &#39;development&#39;)
+    app = Flask(&#39;juejin&#39;)
+    CORS(app, supports_credentials=True)  # 开放跨域限制
+    app.config.from_object(config[config_name])
+    register_extensions(app)  # 注册拓展（拓展初始化）
+    register_commands(app)  # 注册自定义 shell 命令
+    register_blueprints(app)  # 注册蓝本
+    return app
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注册 shell 命令，方便快速生成数据库数据</p><div class="language-Python line-numbers-mode" data-ext="Python"><pre class="language-Python"><code># 注册命令
+def register_commands(app):
+    #  删除表和数据库后进行重建
+    @app.cli.command()
+    @click.option(&#39;--drop&#39;, is_flag=True, help=&#39;Create after drop.&#39;)
+    def initdb(drop):
+        #  初始化数据库
+        if drop:
+            click.confirm(&#39;This operation will delete the database, do you want to continue?&#39;, abort=True)
+            db.drop_all()
+            click.echo(&#39;Drop tables.&#39;)
+        db.create_all()
+        click.echo(&#39;Initialized database.&#39;)
+
+    @app.cli.command()
+    @click.option(&#39;--user&#39;, default=10, help=&#39;Quantity of users, default is 10.&#39;)
+    @click.option(&#39;--category&#39;, default=10, help=&#39;Quantity of categories, default is 10.&#39;)
+    @click.option(&#39;--post&#39;, default=5, help=&#39;Quantity of posts, default is 50.&#39;)
+    def forge(user, category, post):
+        # 生成虚拟数据
+        from src.fakes import fake_categories, fake_posts, fake_user
+
+        db.drop_all()
+        db.create_all()
+
+        click.echo(&#39;Generating %d users...&#39; % user)
+        fake_user(user)
+
+        click.echo(&#39;Generating %d categories for every user...&#39; % category)
+        fake_categories(category)
+
+        click.echo(&#39;Generating %d posts for every user...&#39; % post)
+        fake_posts(post)
+
+        click.echo(&#39;Done.&#39;)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>虚拟数据生成</li></ol><p>使用 faker 生成虚拟用户、分类和文章数据，用以填充界面和检查后端功能</p><div class="language-Python line-numbers-mode" data-ext="Python"><pre class="language-Python"><code>fake = Faker(&#39;zh-CN&#39;)
+
+
+# 生成虚拟用户信息
+def fake_user(count=10):
+    for i in range(count):
+        user = User(
+            username=fake.user_name()
+        )
+        user.set_password(&#39;12345678&#39;)
+        db.session.add(user)
+        try:
+            db.session.commit()
+        except IntegrityError:
+            db.session.rollback()
+
+
+# 生成虚拟分类
+def fake_categories(count=10):
+    for i in range(count):
+        category = Category(name=fake.word())
+        db.session.add(category)
+        try:
+            db.session.commit()
+        except IntegrityError:
+            db.session.rollback()
+
+
+# 生成虚拟文章
+def fake_posts(count=5):
+    for i in range(User.query.count()):
+        for j in range(count):
+            post = Post(
+                title=fake.sentence(),
+                body=fake.text(2000),
+                category=Category.query.get(random.randint(1, Category.query.count())),
+                user=User.query.get(i + 1)
+            )
+            db.session.add(post)
+        db.session.commit()
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>数据库</li></ol><p>建立用户、分类和文章数据库模型， 设置外键并建立数据库对象之间的关系</p><div class="language-Python line-numbers-mode" data-ext="Python"><pre class="language-Python"><code>class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(20))
+    password_hash = db.Column(db.String(128))
+    posts = db.relationship(&#39;Post&#39;, back_populates=&#39;user&#39;)  # 建立用户和文章的一对多关系
+
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def validate_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
+    def to_dict(self):
+        return dict(id=self.id, username=self.username)
+
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), unique=True)
+
+    # 建立分类和文章的一对多关系
+    posts = db.relationship(&#39;Post&#39;, back_populates=&#39;category&#39;)
+
+    def to_dict(self):
+        return dict(id=self.id, name=self.name)
+
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
+    body = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow, index=True)
+
+    category_id = db.Column(db.Integer, db.ForeignKey(&#39;category.id&#39;))
+    category = db.relationship(&#39;Category&#39;, back_populates=&#39;posts&#39;)
+
+    user_id = db.Column(db.Integer, db.ForeignKey(&#39;user.id&#39;))
+    user = db.relationship(&#39;User&#39;, back_populates=&#39;posts&#39;)
+
+    def to_dict(self):
+        return dict(id=self.id, title=self.title, body=self.body,
+                    timestamp=self.timestamp.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;), category=self.category.to_dict(),
+                    user=self.user.to_dict())
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>配置</li></ol><p>进行 Flask 拓展的相关配置，以及数据库连接的 URL 等</p><div class="language-Python line-numbers-mode" data-ext="Python"><pre class="language-Python"><code>class BaseConfig(object):
+    SECRET_KEY = os.getenv(&#39;SECRET_KEY&#39;, &#39;secret_string&#39;)
+    # 禁止转译中文
+    JSON_AS_ASCII = False
+    # 数据库
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    USERNAME = os.getenv(&#39;DATABASE_USERNAME&#39;)
+    PASSWORD = os.getenv(&#39;DATABASE_PASSWORD&#39;)
+    HOST = os.getenv(&#39;DATABASE_HOST&#39;)
+    PORT = os.getenv(&#39;DATABASE_PORT&#39;)
+    NAME = os.getenv(&#39;DATABASE_NAME&#39;)
+
+class DevelopmentConfig(BaseConfig):
+    SQLALCHEMY_DATABASE_URI = &#39;mysql+pymysql://{}:{}@{}:{}/{}&#39;.format(
+        BaseConfig.USERNAME, BaseConfig.PASSWORD, BaseConfig.HOST, BaseConfig.PORT, BaseConfig.NAME
+    )
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>用户部分：获取分类，获取文章，新建文章，删除文章</li></ol><div class="language-Python line-numbers-mode" data-ext="Python"><pre class="language-Python"><code>user_bp = Blueprint(&#39;user&#39;, __name__)
+
+
+@user_bp.route(&#39;/category&#39;, methods=[&#39;GET&#39;, &quot;POST&quot;])
+def get_category():
+    response = {}
+    categorys = [_.name for _ in Category.query.all()]
+    response[&#39;category&#39;] = categorys
+    return jsonify(response)
+
+
+@user_bp.route(&#39;/post&#39;, methods=[&#39;GET&#39;, &quot;POST&quot;])
+def get_post():
+    response = {}
+    posts = {}
+    for _ in Post.query.all():
+        posts.update({_.id: [_.title, _.category.name, _.body]})
+    response[&#39;post&#39;] = posts
+    return jsonify(response)
+
+
+# 新建文章
+@user_bp.route(&#39;/post/new&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def new_post():
+    user = User.query.get(1)
+    title = request.form.get(&#39;title&#39;)
+    category = Category.query.filter_by(name=request.form.get(&#39;category&#39;)).first()
+    body = request.form.get(&#39;body&#39;)
+    post = Post(title=title, body=body, category=category, user=user)
+    db.session.add(post)
+    db.session.commit()
+    response = {&#39;status&#39;: &#39;success&#39;}
+    return jsonify(response)
+
+
+# 删除文章
+@user_bp.route(&#39;/post/&lt;int:post_id&gt;/delete&#39;, methods=[&#39;POST&#39;])
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    db.session.delete(post)
+    db.session.commit()
+    response = {&#39;status&#39;: &#39;success&#39;}
+    return jsonify(response)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>认证部分：注册、登录</li></ol><div class="language-Python line-numbers-mode" data-ext="Python"><pre class="language-Python"><code>auth_bp = Blueprint(&#39;auth&#39;, __name__)
+
+
+@auth_bp.route(&#39;/login&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def login():
+    username = request.form.get(&#39;username&#39;)
+    password = request.form.get(&#39;password&#39;)
+    user = User.query.filter_by(username=username).first()
+    if user:
+        if username == user.username and user.validate_password(password):
+            response = {&#39;status&#39;: &#39;success&#39;}
+            return jsonify(response)
+        else:
+            response = {&#39;status&#39;: &#39;failed&#39;, &#39;description&#39;: &#39;密码错误&#39;}
+            return jsonify(response)
+    else:
+        response = {&#39;status&#39;: &#39;failed&#39;, &#39;description&#39;: &#39;账户不存在&#39;}
+        return jsonify(response)
+
+
+@auth_bp.route(&#39;/register&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def register():
+    username = request.form.get(&#39;username&#39;)
+    password = request.form.get(&#39;password&#39;)
+    password2 = request.form.get(&#39;confirm-password&#39;)
+    if password != password2:
+        response = {&#39;status&#39;: &#39;failed&#39;, &#39;description&#39;: &#39;密码不匹配&#39;}
+        return jsonify(response)
+    user = User(username=username)
+    user.set_password(password)
+    db.session.add(user)
+    db.session.commit()
+    response = {&#39;status&#39;: &#39;success&#39;}
+    return jsonify(response)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h1 id="四、测试结果" tabindex="-1"><a class="header-anchor" href="#四、测试结果" aria-hidden="true">#</a> 四、测试结果</h1><blockquote><p>建议从功能测试和性能测试两部分分析，其中功能测试补充测试用例，性能测试补充性能分析报告、可优化点等内容。</p></blockquote><ol><li>前端部分</li></ol><p>首页无限流</p><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/(null)" alt="img" loading="lazy"></p><p>首页导航自动隐藏/展现</p><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/(null)-20220822204440728.(null)" alt="img" loading="lazy"></p><p>首页列表部分弹出框效果</p><p><img src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/(null)-20220822204441283.(null)" alt="img" loading="lazy"></p><ol><li>后端部分</li></ol><p>2.1 功能测试</p><table><thead><tr><th><strong>测试用例编号</strong></th><th><strong>测试功能</strong></th><th><strong>测试用例</strong></th><th><strong>预期结果</strong></th><th><strong>测试结果</strong></th></tr></thead><tbody><tr><td>2.1.1</td><td>注册</td><td>Username: testPassword: 123456Confirm Password: 12345</td><td>密码不匹配</td><td>通过</td></tr><tr><td>2.1.2</td><td>注册</td><td>Username: testPassword: 123456Confirm Password: 123456</td><td>注册成功，数据库存入该用户信息</td><td>通过</td></tr><tr><td>2.1.3</td><td>登录</td><td>Username: testActual Password: 123456Input Password: 12345</td><td>密码错误</td><td>通过</td></tr><tr><td>2.1.4</td><td>登录</td><td>Inexistent Username: faker</td><td>用户不存在</td><td>通过</td></tr><tr><td>2.1.5</td><td>登录</td><td>Username: testActual Password: 123456Input Password: 123456</td><td>登录成功，返回 success</td><td>通过</td></tr><tr><td>2.1.6</td><td>获取分类</td><td>前端调用后端接口获取数据库中的所有分类名</td><td>将分类名存入 list 中以json 形式封装返回</td><td>通过</td></tr><tr><td>2.1.7</td><td>获取文章数据</td><td>前端调用后端接口获取数据库中的所有文章信息，包括标题，分类和内容</td><td>将文章信息存入 dict 中以 json形式封装返回</td><td>通过</td></tr><tr><td>2.1.8</td><td>新建文章</td><td>前端向后端传入文章表单数据表单形式如下Title: xxxCategory: xxxBody: xxx</td><td>新建文章成功，数据库存入文章数据</td><td>通过</td></tr><tr><td>2.1.9</td><td>删除文章</td><td>点击删除按钮</td><td>删除文章成功，文章列表的相关文章信息消失</td><td>通过</td></tr></tbody></table><p>2.2 性能测试（未做）</p><h1 id="五、demo-演示视频-必填" tabindex="-1"><a class="header-anchor" href="#五、demo-演示视频-必填" aria-hidden="true">#</a> 五、Demo 演示视频 （必填）</h1><p>暂时无法在飞书文档外展示此内容</p><h1 id="六、项目总结与反思" tabindex="-1"><a class="header-anchor" href="#六、项目总结与反思" aria-hidden="true">#</a> 六、项目总结与反思</h1><blockquote><ol><li>目前仍存在的问题</li></ol><p>前端部分：</p><p>首页右侧的侧边栏，在往下滑动后先消失再生成的逻辑没有太厘清，暂时没有进行实现。</p><p>首页部分组件抽离不清晰，文章item应该独立抽离成组件</p><p>首页导航栏隐藏和无限滚动有部分对页面位置监听的处理函数，未能抽象为单独工具函数</p><p>vite在开发时不报错，构建时报错</p><p>后端部分：</p><p>（1）登录时未添加验证（验证码或邮箱）</p><p>（2）新建文章功能未添加 markdown 实时渲染与编辑器插件</p><p>（3）只做了简易后端，可拓展功能还有很多（类博客平台）</p><ol><li><p>已识别出的优化项</p></li><li><p>架构演进的可能性</p></li><li><p>项目过程中的反思与总结</p></li></ol><p>钱：第一次尝试前后端分离开发，尚不熟练，在前后端互传数据时遇到了很多阻力，由于时间原因也仅搭建了简易后端。如上所述，项目还有很多地方可以优化，还有很多功能尚未拓展。但在一周的开发学习过程中，本人切实体会到了前后端分离的优点（代码互不干扰开发效率高，后端只用关心接口交互等），也对 Vue 组件开发有了更深的理解和感悟，今后会多学习一些前后端分离的项目，努力解决和总结每次开发过程中遇到的问题，避免今后重复踩坑。</p><p>常：这次使用Vue模仿掘金官网，学习了许多新的知识点，比如第一次使用vite开发，发现和webpack中就有一些设置是不一样的。同时，通过团队合作开发提高了与队友协作交流的能力。</p></blockquote><h1 id="七、其他补充资料-选填" tabindex="-1"><a class="header-anchor" href="#七、其他补充资料-选填" aria-hidden="true">#</a> 七、其他补充资料（选填）</h1></div><!----><footer class="page-meta"><div class="meta-item edit-link"><a href="https://github.com/vuepress-theme-hope/vuepress-theme-hope/edit/main/docs/se/FrontEnd/2022青训营/掘金官网.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page on GitHub" class="nav-link label"><!--[--><svg xmlns="http://www.w3.org/2000/svg" class="icon edit-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="edit icon"><path d="M430.818 653.65a60.46 60.46 0 0 1-50.96-93.281l71.69-114.012 7.773-10.365L816.038 80.138A60.46 60.46 0 0 1 859.225 62a60.46 60.46 0 0 1 43.186 18.138l43.186 43.186a60.46 60.46 0 0 1 0 86.373L588.879 565.55l-8.637 8.637-117.466 68.234a60.46 60.46 0 0 1-31.958 11.229z"></path><path d="M728.802 962H252.891A190.883 190.883 0 0 1 62.008 771.98V296.934a190.883 190.883 0 0 1 190.883-192.61h267.754a60.46 60.46 0 0 1 0 120.92H252.891a69.962 69.962 0 0 0-69.098 69.099V771.98a69.962 69.962 0 0 0 69.098 69.098h475.911A69.962 69.962 0 0 0 797.9 771.98V503.363a60.46 60.46 0 1 1 120.922 0V771.98A190.883 190.883 0 0 1 728.802 962z"></path></svg><!--]-->Edit this page on GitHub<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!----></a></div><div class="meta-item update-time"><span class="label">Last update: </span><!----></div><div class="meta-item contributors"><span class="label">Contributors: </span><!--[--><!--[--><span class="contributor" title="email: 1274994508@qq.com">KoryKL</span><!--]--><!--]--></div></footer><nav class="page-nav"><a href="/blog/se/FrontEnd/2022%E9%9D%92%E8%AE%AD%E8%90%A5/16%20%E5%B0%8F%E6%B8%B8%E6%88%8F.html" class="nav-link prev" aria-label="/se/FrontEnd/2022青训营/16 小游戏.md"><div class="hint"><span class="arrow left"></span>Prev</div><div class="link"><!---->/se/FrontEnd/2022青训营/16 小游戏.md</div></a><!----></nav><div class="giscus-wrapper input-top" style="display:block;"><div style="text-align:center">Loading...</div></div><!----><!--]--></main><!--]--><footer class="footer-wrapper"><div class="footer">Kory's Blog</div><div class="copyright">Copyright © 2023 Kory</div></footer><!--]--></div><!--]--><!----><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app-8a26812c.js" defer></script>
+  </body>
+</html>

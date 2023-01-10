@@ -1,0 +1,1 @@
+import{_ as e,V as t,W as o,X as _}from"./framework-91a010c2.js";const s={},n=_("p",null,"多线程",-1),c=_("p",null,"程序：静态",-1),l=_("p",null,"进程：程序的一次执行过程",-1),r=[n,c,l];function a(d,i){return t(),o("div",null,r)}const f=e(s,[["render",a],["__file","13 多线程.html.vue"]]);export{f as default};

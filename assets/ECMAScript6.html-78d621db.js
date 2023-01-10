@@ -1,0 +1,1 @@
+import{_ as c,V as o,W as l,X as e,Y as t}from"./framework-91a010c2.js";const n={},s=e("p",null,[e("code",null,"let"),t("所声明的变量，只在"),e("code",null,"let"),t("命令所在的代码块内有效。")],-1),_=[s];function r(a,d){return o(),l("div",null,_)}const u=c(n,[["render",r],["__file","ECMAScript6.html.vue"]]);export{u as default};

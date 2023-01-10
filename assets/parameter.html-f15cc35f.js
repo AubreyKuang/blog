@@ -1,0 +1,1 @@
+import{_ as t,V as a,W as r,X as e,Y as s}from"./framework-91a010c2.js";const c={},o=e("h1",{id:"传参",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#传参","aria-hidden":"true"},"#"),s(" 传参")],-1),n=e("p",null,"啦啦啦啦啦",-1),_=[o,n];function d(i,l){return a(),r("div",null,_)}const f=t(c,[["render",d],["__file","parameter.html.vue"]]);export{f as default};
