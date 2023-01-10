@@ -5,10 +5,8 @@ export const enNavbar = navbar([
   // 如果不需要子目录如下一行写法即可，认为是文件夹路径
   "/algo/",
 
-  "/se/",
-  
-  
 
+  
   {
     text: "Computer Science",
     // icon: "edit",
@@ -48,9 +46,9 @@ export const enNavbar = navbar([
         ]
       },
       {
-        text: "Lang",
+        text: "Components",
         // icon: "note",
-        prefix: "lang/",
+        prefix: "components/",
         children: [
           {
             text: "Java",
@@ -62,7 +60,7 @@ export const enNavbar = navbar([
     ]
   },
   
-  
+  "/se/",
 
   // {
   //   text: "Software Engineering",
