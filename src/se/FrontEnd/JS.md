@@ -24,7 +24,7 @@ Node.js 是 JavaScript 的服务器运行环境（runtime
 
 位置
 
-将 <script> 放在HTML文件的底部附近
+将 \<script\> 放在HTML文件的底部附近
 
 
 

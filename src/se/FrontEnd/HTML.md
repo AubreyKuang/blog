@@ -359,7 +359,7 @@ placeholder
 
 ### button按钮标签
 
-提交：<button type= "submit”>提交</button>
+提交：<button type= "submit”>提交\</button\>
 
 
 
@@ -427,7 +427,7 @@ rows 可见行数
 
 ##### 常用无语义的布局标签
 
-#####  div：独占一行 <div></div>
+#####  div：独占一行 \<div>\</div>
 
 ##### span：一行显示多个
 
