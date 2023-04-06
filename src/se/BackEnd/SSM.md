@@ -108,6 +108,8 @@ spring在刚开始的时候使用工厂模式（DI）和代理模式（AOP）解
 
 ![image-20220215163226946](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/image-20220215163226946.png)
 
+
+
 #### Spring Bean
 
 被实例的，组装的及被Spring 容器管理的Java对象。
@@ -136,7 +138,7 @@ text/java
 
 ![image-20220221142033663](https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/3978/image-20220221142033663.png)
 
-除了最后两个，都是重点
+
 
 1. 按照**数据类型**从spring容器中匹配：@Autowired
 
