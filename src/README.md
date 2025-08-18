@@ -14,7 +14,7 @@ titles:
 
 # About Me
 
-Hello! I am Aubrey Kuang, a student majoring in information system of NEU! Nice to see you.
+Hello! I am Aubrey Kuang, a master student of Carnegie Mellon University! Nice to see you.
 
 ## Professional Experience
 
