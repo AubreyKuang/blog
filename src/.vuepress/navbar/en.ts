@@ -131,7 +131,8 @@ export const enNavbar = navbar([
       // "decision/",
     ]
   },
-
-
-
+  {
+    text: "List",
+    link: "/list"
+  }
 ]);

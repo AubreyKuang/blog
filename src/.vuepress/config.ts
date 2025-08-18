@@ -1,4 +1,5 @@
 import { defineUserConfig } from "vuepress";
+import { viteBundler } from '@vuepress/bundler-vite';
 import theme from "./theme.js";
 
 export default defineUserConfig({
@@ -7,7 +8,7 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Kory's Blog",
+      title: "Aubrey's Blog",
       description: "a developer majoring in information system",
     },
     "/zh/": {
@@ -18,6 +19,7 @@ export default defineUserConfig({
   },
 
   theme,
+  bundler: viteBundler(),
 
   shouldPrefetch: false,
 });

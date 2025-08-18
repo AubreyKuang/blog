@@ -1,45 +1,24 @@
 ---
 home: true
-layout: Blog
-icon: home
-title: Home
-heroImage: /favicon.ico
-heroText: Kory's blog
-bgImage: /bg.png
-tagline: Stay hungry, Stay foolish.
-heroFullScreen: false
-projects:
-  # - icon: project
-  #   name: project name
-  #   desc: project detailed description
-  #   link: https://your.project.link
+portfolio: true
+avatar: /avatar.png
+avatarStyle: "width: 50%; display: block; margin: auto;"
+heroText: Aubrey's blog
+name: Aubrey Kuang
+titles: 
 
-  - icon: link
-    name: link name
-    desc: link detailed description
-    link: https://link.address
-
-  - icon: book
-    name: book name
-    desc: Detailed description of the book
-    link: https://link.to.your.book
-
-  - icon: article
-    name: article name
-    desc: Detailed description of the article
-    link: https://link.to.your.article
-
-  # - icon: friend
-  #   name: friend name
-  #   desc: Detailed description of friend
-  #   link: https://link.to.your.friend
-
-  # - icon: /favicon.ico
-  #   name: custom item
-  #   desc: Detailed description of this custom item
-  #   link: https://link.to.your.friend
-
-footer: Kory's blog
+ - MISM@CMU 26'
+ - SDE Intern@Amazon 25'
+ - Product Intern@JD.com 23'
 ---
 
-If you have any ideas to share, please contact me at any time in your convenience.
+# About Me
+
+Hello! I am Aubrey Kuang, a student majoring in information system of NEU! Nice to see you.
+
+## Professional Experience
+
+kk
+
+## Educational Background
+kk

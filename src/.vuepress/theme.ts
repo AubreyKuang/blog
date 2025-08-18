@@ -3,14 +3,14 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://korykl.github.io/blog",
+  hostname: "https://aubreykuang.github.io/blog",
 
   author: {
-    name: "Kory",
-    url: "https://github.com/korykl",
+    name: "Aubrey",
+    url: "https://github.com/aubreykuang",
   },
 
-  iconAssets: "iconfont",
+  iconAssets: undefined,
 
   logo: "/favicon.ico",
 
@@ -22,7 +22,7 @@ export default hopeTheme({
 
   blog: {
     medias: {
-      GitHub: "https://github.com/korykl",
+      GitHub: "https://github.com/aubreykuang",
       Gitee: "https://gitee.com/da-wei-liu",
       Linkedin: "https://www.linkedin.cn/incareer/in/ACoAAChiGB8BoHZIY3GXEyeAxfCUVmL5EpXQY6c",
       // Email: "l729641074@163.com",
@@ -68,7 +68,7 @@ export default hopeTheme({
       // sidebar
       sidebar: enSidebar,
 
-      footer: "Kory's Blog",
+      footer: "Aubrey's Blog",
 
       displayFooter: true,
 
@@ -147,48 +147,48 @@ export default hopeTheme({
     },
 
     // Disable features you don’t want here
-    mdEnhance: {
-      align: true,
-      attrs: true,
-      chart: true,
-      codetabs: true,
-      container: true,
-      demo: true,
-      echarts: true,
-      flowchart: true,
-      gfm: true,
-      imageLazyload: true,
-      // imageTitle: true,
-      imageSize: true,
-      include: true,
-      katex: true,
-      mark: true,
-      mermaid: true,
-      playground: {
-        presets: ["ts", "vue"],
-      },
-      presentation: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
-      },
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tabs: true,
-      vPre: true,
-      vuePlayground: true,
-    },
+    // mdEnhance: {
+    //   align: true,
+    //   attrs: true,
+    //   chart: true,
+    //   codetabs: true,
+    //   container: true,
+    //   demo: true,
+    //   echarts: true,
+    //   flowchart: true,
+    //   gfm: true,
+    //   imageLazyload: true,
+    //   // imageTitle: true,
+    //   imageSize: true,
+    //   include: true,
+    //   katex: true,
+    //   mark: true,
+    //   mermaid: true,
+    //   playground: {
+    //     presets: ["ts", "vue"],
+    //   },
+    //   presentation: {
+    //     plugins: ["highlight", "math", "search", "notes", "zoom"],
+    //   },
+    //   stylize: [
+    //     {
+    //       matcher: "Recommended",
+    //       replacer: ({ tag }) => {
+    //         if (tag === "em")
+    //           return {
+    //             tag: "Badge",
+    //             attrs: { type: "tip" },
+    //             content: "Recommended",
+    //           };
+    //       },
+    //     },
+    //   ],
+    //   sub: true,
+    //   sup: true,
+    //   tabs: true,
+    //   vPre: true,
+    //   vuePlayground: true,
+    // },
 
     pwa: {
       favicon: "/favicon.ico",
@@ -196,34 +196,34 @@ export default hopeTheme({
       cachePic: true,
       appendBase: true,
       apple: {
-        icon: "/assets/icon/152.png",
+        icon: "/assets/favicon.ico",
         statusBarColor: "black",
       },
       msTile: {
-        image: "/assets/icon/144.png",
+        image: "/assets/favicon.ico",
         color: "#ffffff",
       },
       manifest: {
         icons: [
           {
-            src: "/assets/icon/512.png",
+            src: "/assets/favicon.ico",
             sizes: "512x512",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/assets/icon/196.png",
+            src: "/assets/favicon.ico",
             sizes: "192x192",
             purpose: "maskable",
             type: "image/png",
           },
           {
-            src: "/assets/icon/512.png",
+            src: "/assets/favicon.ico",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "/assets/icon/196.png",
+            src: "/assets/favicon.ico",
             sizes: "196x196",
             type: "image/png",
           },

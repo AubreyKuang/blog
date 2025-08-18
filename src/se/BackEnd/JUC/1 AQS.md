@@ -12,7 +12,7 @@
 
 AQS 本质上是一个 FIFO 的双向队列，线程被包装成结点的形式，基于自旋机制在队列中等待获取资源（这里的资源可以简单理解为对象锁）
 
-![image-20230425122431216](https://cdn.jsdelivr.net/gh/KoryKL/pictures@main/blog/image-20230425122431216.png)
+![image-20230425122431216](https://cdn.jsdelivr.net/gh/AubreyKuang/pictures@main/blog/image-20230425122431216.png)
 
 使用一个 volatile 修饰的 int 类型的 state 表示同步状态,通过内置的 FIFO 队列 CLH 完成资源获取的排队工作, 将资源封装为 Node ,通过 cas 改变 state 值
 

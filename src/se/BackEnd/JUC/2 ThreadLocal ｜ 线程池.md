@@ -169,7 +169,7 @@
 
 ### 处理任务
 
-![image-20230427103447439](https://cdn.jsdelivr.net/gh/KoryKL/pictures@main/blog/image-20230427103447439.png)
+![image-20230427103447439](https://cdn.jsdelivr.net/gh/AubreyKuang/pictures@main/blog/image-20230427103447439.png)
 
 
 
