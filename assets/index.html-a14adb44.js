@@ -1,1 +1,0 @@
-import{_ as n,V as t,W as r,X as e,Y as a}from"./framework-91a010c2.js";const o={},i=e("h1",{id:"frontend-engineering",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#frontend-engineering","aria-hidden":"true"},"#"),a(" FrontEnd Engineering")],-1),c=[i];function d(s,_){return t(),r("div",null,c)}const h=n(o,[["render",d],["__file","index.html.vue"]]);export{h as default};

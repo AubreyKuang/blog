@@ -1,1 +1,0 @@
-import{_ as e,V as t,W as n,X as _}from"./framework-91a010c2.js";const c={},o=_("p",null,"npm run dev",-1),s=[o];function r(a,l){return t(),n("div",null,s)}const d=e(c,[["render",r],["__file","Vue.html.vue"]]);export{d as default};
