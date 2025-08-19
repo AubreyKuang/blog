@@ -23,8 +23,8 @@ export default hopeTheme({
   blog: {
     medias: {
       GitHub: "https://github.com/aubreykuang",
-      Gitee: "https://gitee.com/da-wei-liu",
-      Linkedin: "https://www.linkedin.cn/incareer/in/ACoAAChiGB8BoHZIY3GXEyeAxfCUVmL5EpXQY6c",
+      // Gitee: "https://gitee.com/da-wei-liu",
+      Linkedin: "https://www.linkedin.com/in/yongbeikuang/",
       // Email: "l729641074@163.com",
       // BiliBili: "https://example.com",
       // Baidu: "https://example.com",
@@ -48,7 +48,7 @@ export default hopeTheme({
       // Rss: "https://example.com",
       // Steam: "https://example.com",
       // Twitter: "https://example.com",
-      // Wechat: "https://example.com",
+      // Wechat: "https://example.com/search_id{}",
       // Weibo: "https://example.com",
       // Whatsapp: "https://example.com",
       // Youtube: "https://example.com",
