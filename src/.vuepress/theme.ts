@@ -77,7 +77,7 @@ export default hopeTheme({
     },
 
     icon: {
-      assets: "fontawesome",
+      assets: "fontawesome-with-brands",
     },
 
     redirect: {
