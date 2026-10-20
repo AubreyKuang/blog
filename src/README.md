@@ -1,74 +1,78 @@
 ---
 home: true
 portfolio: true
-avatar: /avatar.png
+title: About Me
+icon: user
+avatar: /avatar.jpg
 avatarStyle: "width: 50%; display: block; margin: auto;"
 heroText: Aubrey's blog
 name: Aubrey Kuang
-titles: 
-
- - MISM@CMU 26'
- - SDE Intern@Amazon 25'
-#  - Product Intern@JD.com 23'
+titles:
+  - SDE @ AWS
+  - MISM @ CMU
 ---
 
 # About Me
 
-Hello! I am Aubrey Kuang, a master student of Carnegie Mellon University! 
+Hi, I'm Aubrey Kuang, a Software Development Engineer at **Amazon Web Services**, working on AWS networking services in the **San Francisco Bay Area**. I graduated from Carnegie Mellon University with a Master of Information Systems Management.
 
 Welcome to my corner of the internet. Nice to see you.
 
 ## Professional Experience 💼
 
+**Amazon Web Services** (Mar 2026 - Present)
+
+*Software Development Engineer, AWS Networking* @ SF Bay Area
+
+* **[Network Agent]** Building an AI-powered network agent that assists with network operations, automating investigation and troubleshooting workflows.
+
+* **[Issue Detection]** Developing issue detection capabilities that identify network anomalies early and surface actionable signals for faster mitigation.
+
 **Amazon** (Jun 2025 - Aug 2025)
 
-*Software Development Engineer*     @Seattle
+*Software Development Engineer Intern* @ Seattle
 
-* **[Distributed System Development]** Architected a comprehensive event-driven system connecting API Gateway, DynamoDB, SNS, and SQS services, establishing scalable microservices communication patterns and implementing cross-account access management with a robust producer-consumer architecture where SQS listeners coordinate worker logic execution, ensuring smooth data flow across distributed systems.
+* **[Distributed System Development]** Architected an event-driven system connecting API Gateway, DynamoDB, SNS, and SQS, establishing scalable microservice communication and cross-account access management with a producer-consumer architecture where SQS listeners coordinate worker execution.
 
-* **[LLM Service Development]** Engineered end-to-end Bedrock AI service integration with advanced prompt engineering techniques, fine-tuning temperature parameters and developing intelligent response parsing algorithms that automated report generation for human review, achieving an exceptional 98% positive feedback rate.
+* **[LLM Service Development]** Engineered an end-to-end Amazon Bedrock integration with prompt engineering, temperature tuning, and response parsing that automated report generation for human review, achieving a 98% positive feedback rate.
 
-* **[Cloud Service Integration]** Integrated Amazon OpenSearch into containerized Fargate services, implementing full-text search capabilities that improved data retrieval performance and user experience.
+* **[Cloud Service Integration]** Integrated Amazon OpenSearch into containerized Fargate services, adding full-text search that improved data retrieval performance and user experience.
 
-* **[Cross-Dependency Model Development]** Developed a unified Common DAO package supporting cross- dependency models for Peru and Brazil AWS services, reducing code duplication while ensuring consistent data access patterns across different dependency models.
+* **[Cross-Dependency Model Development]** Developed a unified Common DAO package supporting cross-dependency models for Peru and Brazil AWS services, reducing code duplication and keeping data access patterns consistent.
 
-## Educational Background 🎓
+## Education 🎓
 
 **Carnegie Mellon University** (Aug 2024 - Dec 2025)
 
 * Master of Information Systems Management
 
-    * Coursework: Distributed Systems for ISM, Database Management, Object-Oriented Programming, Data Structures 
-    
+    * Coursework: Distributed Systems for ISM, Database Management, Object-Oriented Programming, Data Structures
+
     * Honors: Hagan International Scholarship
- 
 
 **Northeastern University** (Sept 2020 - July 2024)
 
 * Bachelor of Information Management and Information Systems
- 
+
     * Weighted Average Grade: 91, Rank: 3 / 60, WES GPA: 3.9 / 4.0
 
     * Honors: 2024 Outstanding Graduate (Top 5% of graduates), 2020-2023 Outstanding Student, School Scholarship
 
-
-
 ## Technical Skills 💻
 
-* **Programming Languages:** Python (Flask), Java (SpringBoot), Bash (Linux), HTML, CSS, JavaScript (Angular), SQL, C
-* **Database Management:** Oracle, MySQL, Redis, MongoDB, DynamoDB
-* **Backend Development:** RESTful APIs, Microservices Architecture, Message Queuing (Amazon SQS)
-* **Cloud & Infrastructure:** AWS Lambda, AWS Fargate, Amazon OpenSearch, Amazon Bedrock, AWS CDK
-* **CI/CD & DevOps:** Pipeline Automation, Continuous Integration/Continuous Deployment, Version Control (Git)
-* **Data Analytics & Visualization:** Microsoft Excel, R, Power BI, Python (Pandas, Matplotlib), ECharts
+* **Programming Languages:** Java (Spring Boot), Python (Flask), TypeScript / JavaScript (Angular), SQL, Bash, C
+* **Cloud & Infrastructure:** AWS Lambda, AWS Fargate, Amazon Bedrock, Amazon OpenSearch, AWS CDK, API Gateway
+* **Backend & Distributed Systems:** RESTful APIs, Microservices, Event-Driven Architecture, Amazon SQS / SNS
+* **Databases:** DynamoDB, MySQL, Redis, MongoDB, Oracle
+* **AI & Agents:** LLM Integration, Prompt Engineering, AI Agents
+* **CI/CD & DevOps:** Pipeline Automation, Continuous Integration / Deployment, Git
 
+## Notes 📒
 
-
+Looking for my old study notes (Java backend, databases, algorithms, GRE / TOEFL)? They are archived [here (in Chinese)](/zh/notes/).
 
 ## Let's Connect! ✨
 
-Thanks for taking the time to learn about me! I'm always excited to connect with fellow students, professionals, and anyone interested in technology and information systems. 
+Thanks for stopping by! I'm always happy to connect with fellow engineers and anyone interested in cloud, networking, and AI.
 
-Feel free to reach out if you'd like to chat!
-
-[Connect me at LinkedIn](https://www.linkedin.com/in/yongbeikuang/)
+[Connect with me on LinkedIn](https://www.linkedin.com/in/yongbeikuang/)

@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "2.0.0",
-  "description": "Aubrey's Blog",
+  "description": "Aubrey Kuang's personal site",
   "license": "MIT",
   "type": "module",
   "scripts": {

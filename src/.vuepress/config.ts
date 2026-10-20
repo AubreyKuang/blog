@@ -1,5 +1,5 @@
 import { defineUserConfig } from "vuepress";
-import { viteBundler } from '@vuepress/bundler-vite';
+import { viteBundler } from "@vuepress/bundler-vite";
 import theme from "./theme.js";
 
 export default defineUserConfig({
@@ -9,12 +9,12 @@ export default defineUserConfig({
     "/": {
       lang: "en-US",
       title: "Aubrey's Blog",
-      description: "a developer majoring in information system",
+      description: "Software Development Engineer at AWS",
     },
     "/zh/": {
       lang: "zh-CN",
       title: "况咏蓓的博客",
-      description: "一名信息系统专业学生",
+      description: "AWS 软件开发工程师",
     },
   },
 

@@ -1,6 +1,0 @@
-# Decision Making
-
-
-
-#### Hello
-

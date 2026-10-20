@@ -1,52 +1,18 @@
 import { navbar } from "vuepress-theme-hope";
 
 export const zhNavbar = navbar([
-  "/zh/",
-  { text: "演示", icon: "discover", link: "/zh/demo/" },
+  { text: "关于我", icon: "user", link: "/zh/" },
   {
-    text: "博文",
-    icon: "edit",
-    prefix: "/zh/posts/",
+    text: "笔记归档",
+    icon: "box-archive",
+    prefix: "/zh/notes/",
     children: [
-      {
-        text: "苹果",
-        icon: "edit",
-        prefix: "apple/",
-        children: [
-          { text: "苹果1", icon: "edit", link: "1" },
-          { text: "苹果2", icon: "edit", link: "2" },
-          "3",
-          "4",
-        ],
-      },
-      {
-        text: "香蕉",
-        icon: "edit",
-        prefix: "banana/",
-        children: [
-          {
-            text: "香蕉 1",
-            icon: "edit",
-            link: "1",
-          },
-          {
-            text: "香蕉 2",
-            icon: "edit",
-            link: "2",
-          },
-          "3",
-          "4",
-        ],
-      },
-      { text: "樱桃", icon: "edit", link: "cherry" },
-      { text: "火龙果", icon: "edit", link: "dragonfruit" },
-      "tomato",
-      "strawberry",
+      { text: "总览", icon: "list", link: "" },
+      { text: "计算机基础", icon: "laptop-code", link: "cs/" },
+      { text: "Java 后端", icon: "mug-hot", link: "java/" },
+      { text: "前端", icon: "code", link: "frontend/" },
+      { text: "算法", icon: "diagram-project", link: "algo/" },
+      { text: "英语考试", icon: "language", link: "english/" },
     ],
-  },
-  {
-    text: "V2 文档",
-    icon: "note",
-    link: "https://vuepress-theme-hope.github.io/v2/zh/",
   },
 ]);
