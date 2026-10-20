@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://aubreykuang.github.io/blog/blog/sitemap.xml
+Sitemap: https://aubreykuang.github.io/blog/sitemap.xml
